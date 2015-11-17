@@ -1,0 +1,16 @@
+{
+  "name": "MailKeeper",
+  "main": "/html/index.html",
+  "window": {
+    "title": "Mail Keeper",
+    "icon": "icon.png",
+    "toolbar": true,
+    "frame": true,
+    "fullscreen": true
+  },
+  "dependencies": {
+    "sqlite3": "3.1.0",
+    "lokijs": "1.3.10",
+    "nedb": "~1.2.1"
+  }
+}

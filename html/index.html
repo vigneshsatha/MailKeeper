@@ -1,0 +1,97 @@
+<html>
+	<script src="../bower_components/angular/angular.min.js"></script>
+	<script src="js/addMail.js"></script>
+	<script src="../bower_components/lokijs/build/lokijs.min.js"></script>
+	<script src="js/MailDao.js"></script>
+	<head>
+		<title>Mail Keeper</title>
+	</head>
+	<body ng-app="mailApp" ng-controller="addMailDetail">
+		<table style="width:90%">
+			<tr>
+				<td colspan="2">
+					<B>New Details</B>
+				</td>
+			</tr>
+			<tr hidden="true">
+				<td>
+					<input type="text" ng-model="mail.id" hidden="true"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Mail Code :
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input  type="text" ng-model="mail.code"/>
+				</td>
+				
+			</tr>
+			<tr>
+				<td>
+					Mail Subject :
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input  type="text" ng-model="mail.mailSub"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Receive Date :
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input  type="text" ng-model="mail.receiveDate"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Reply Status :
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input  type="text" ng-model="mail.replyStatus"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Reply Date :
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input  type="text" ng-model="mail.replyDate"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Remarks :
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input  type="text" ng-model="mail.remarks"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input  type="button" value="View" ng-click="mail.view()"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input  type="button" value="Clear" ng-click="mail.clear()"/>
+				</td>
+				<td>
+					<input  type="button" value="ViewAll" ng-click="mail.viewAllMail()"/>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
