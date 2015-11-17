@@ -8,7 +8,7 @@ mailApp.controller('addMailDetail',function($scope,$location,$window){
 		"replyDate" 	:   "",
 		"replyStatus" 	: 	"",
 		"remarks"		:	"",
-		"view"			:	function(){
+		"save"			:	function(){
 								var mailDetail = $scope.mail;
 								console.log(mailDetail.id);
 								console.log(mailDetail.mailSub);
@@ -18,6 +18,15 @@ mailApp.controller('addMailDetail',function($scope,$location,$window){
 								console.log(mailDetail.remarks);
 								saveMail(mailDetail,function(){
 									alert('Saved successfully');
+									$scope.mail = {
+										"id"			:	"",
+										"code"			:	"",
+										"mailSub"		:	"",
+										"receiveDate"	:	"",
+										"replyDate" 	:   "",
+										"replyStatus" 	: 	"",
+										"remarks"		:	""
+										};
 								});
 							},
 		"clear"			:	function(){
