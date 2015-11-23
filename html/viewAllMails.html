@@ -14,11 +14,21 @@
 				<td>Mail Sub</td>
 				<td>Received Date</td>
 			</tr>
-			<tr>
+			<tr ng-repeat="mail in mails">
 				<td>
-					
+					{{mail._id}}
+				</td>
+				<td>
+					{{mail.code}}
+				</td>
+				<td>
+					{{mail.mailSub}}
+				</td>
+				<td>
+					{{mail.receiveDate}}
 				</td>
 			</tr>
 		</table>
+		<button name="refresh" ng-click="controls.refresh()" value="Refresh">Refresh</button>
 	</body>
 </html>

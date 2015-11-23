@@ -41,7 +41,6 @@ mailApp.controller('addMailDetail',function($scope,$location,$window){
 								};
 							},
 		"viewAllMail"	:	function(){
-							alert('working');
 								window.location.href='viewAllMails.html';
 							}
 		};

@@ -1,4 +1,13 @@
-var viewAllMailApp = angular.module("viewAllMail", []);
+var viewAllMailApp = angular.module("viewAllMailApp", []);
 viewAllMailApp.controller('viewAllMailController',function($scope,$location,$window){
-	$scope.mail = {};
+	$scope.mails = [];
+	$scope.controls = {
+		
+		"refresh" : function(){
+					viewAllMails(function(docs){
+						console.log(docs);
+						$scope.mails = docs;
+					});
+					}
+	};
 });
