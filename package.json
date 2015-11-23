@@ -6,7 +6,7 @@
     "icon": "icon.png",
     "toolbar": true,
     "frame": true,
-    "fullscreen": true
+    "fullscreen": false
   },
   "dependencies": {
     "sqlite3": "3.1.0",
