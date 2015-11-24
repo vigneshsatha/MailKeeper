@@ -1,20 +1,26 @@
 <html>
+	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="../bower_components/angular/angular.min.js"></script>
+	<script src="../bower_components/flatui/dist/js/flat-ui.min.js"></script>
+	<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="../bower_components/angular/angular.min.js"></script>
 	<script src="js/viewAllMail.js"></script>
 	<script src="../bower_components/lokijs/build/lokijs.min.js"></script>
 	<script src="js/MailDao.js"></script>
+	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/flat-ui.min.css"/>
 	<head>
 		<title>Mail Keeper</title>
 	</head>
 	<body  ng-app="viewAllMailApp" ng-controller="viewAllMailController">
-		<table border="1">
-			<tr>
+		<table class="table table-condensed table-responsive" border="1">
+			<thead>
 				<td>Mail Code</td>
 				<td>Mail Sub</td>
 				<td>Received Date</td>
 				<td>Reply Status</td>
 				<td>Remarks</td>
-			</tr>
+			</thead>
 			<tr ng-repeat="mail in mails">
 				<td hidden="true">
 					{{mail._id}}
