@@ -5,15 +5,18 @@
 		<script src="../bower_components/flatui/dist/js/flat-ui.min.js"></script>
 		<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 		<script src="js/addMail.js"></script>
-		<script src="../bower_components/lokijs/build/lokijs.min.js"></script>
 		<script src="js/MailDao.js"></script>
 		<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css"/>
-    	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/flat-ui.min.css"/>
+    	<link rel="stylesheet" href="../bower_components/flatui/dist/css/flat-ui.min.css"/>
 		<title>Mail Keeper</title>
+		<script type="text/javascript">
+			global.$ = $;
+			require('js/global.js');
+		</script>
 	</head>
 	<body ng-app="mailApp" ng-controller="addMailDetail" class="form-group">
-		<div class="form-group">
-			 <div class="form-group" style="width:400px;padding-left:15px;">
+		<div class="form-group" align="center">
+			<div class="form-group" style="width:600px;padding-left:15px;" align="left">
 			<div class="form-group">
 				<h2 class="h2 large">Add New Mail Details</h2>
 			</div>
@@ -56,5 +59,6 @@
 			</div>
 			 </div>
 		</div>
+		<button name="sample" value="sample" onclick="open()" align="center">Click</button>
 	</body>
 </html>

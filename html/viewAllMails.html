@@ -15,15 +15,21 @@
 	<body  ng-app="viewAllMailApp" ng-controller="viewAllMailController">
 		<table class="table table-condensed table-responsive" border="1">
 			<thead>
-				<td>Mail Code</td>
-				<td>Mail Sub</td>
-				<td>Received Date</td>
-				<td>Reply Status</td>
-				<td>Remarks</td>
+				<tr>
+					<th>Select</th>
+					<th>Mail Code</th>
+					<th>Mail Sub</th>
+					<th>Received Date</th>
+					<th>Reply Status</th>
+					<th>Remarks</th>
+				</tr>
 			</thead>
 			<tr ng-repeat="mail in mails">
 				<td hidden="true">
 					{{mail._id}}
+				</td>
+				<td align="center">
+					<input type="radio" name="mailSelect"/>	
 				</td>
 				<td>
 					{{mail.code}}
