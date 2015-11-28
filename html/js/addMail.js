@@ -17,16 +17,7 @@ mailApp.controller('addMailDetail',function($scope,$location,$window){
 								console.log(mailDetail.replyStatus);
 								console.log(mailDetail.remarks);
 								saveMail(mailDetail,function(){
-									alert('Saved successfully');
-									$scope.mail = {
-										"id"			:	"",
-										"code"			:	"",
-										"mailSub"		:	"",
-										"receiveDate"	:	"",
-										"replyDate" 	:   "",
-										"replyStatus" 	: 	"",
-										"remarks"		:	""
-										};
+									alert('Saved successfully');		
 								});
 							},
 		"clear"			:	function(){

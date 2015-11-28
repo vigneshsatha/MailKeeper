@@ -1,21 +1,43 @@
 <html>
-	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
-	<script src="../bower_components/angular/angular.min.js"></script>
-	<script src="../bower_components/flatui/dist/js/flat-ui.min.js"></script>
-	<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script src="../bower_components/angular/angular.min.js"></script>
-	<script src="js/viewAllMail.js"></script>
-	<script src="../bower_components/lokijs/build/lokijs.min.js"></script>
-	<script src="js/MailDao.js"></script>
-	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/flat-ui.min.css"/>
+		<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="../bower_components/angular/angular.min.js"></script>
+		<script src="../bower_components/flatui/dist/js/flat-ui.min.js"></script>
+		<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="../bower_components/angular/angular.min.js"></script>
+		<script src="js/viewAllMail.js"></script>
+		<script src="js/MailDao.js"></script>
+		<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="../bower_components/flatui/dist/css/flat-ui.min.css"/>
 	<head>
 		<title>Mail Keeper</title>
 	</head>
-	<body  ng-app="viewAllMailApp" ng-controller="viewAllMailController">
-		<table class="table table-condensed table-responsive" border="1">
+	<script type="text/javascript">
+		function showGlob(){
+			var glob = require('./js/global.js');
+			console.log(glob.global);
+		}
+	</script>
+	<body ng-app="viewAllMailApp" ng-controller="viewAllMailController">
+		<div class="container">
+			<div class="row" style="float:left;margin-bottom:20px;margin-left:20px">
+				<div class="span3" style="float:left;margin-bottom:20px;margin-left:20px;">  
+					<a href="viewAllMails.html" class="btn btn-large btn-block btn-primary" style="width:80px;">Home</a>
+				</div>
+				<div class="span3" style="float:left;margin-bottom:20px;margin-left:20px;">
+					<a href="index.html" class="btn btn-large btn-block btn-primary" style="width:80px;">Add</a>
+				</div>
+			</div>
+		</div>
+		<div class="tile">
+		<div class="row">
+			<div class="span3" align="center" style="float:left;margin-bottom:20px;margin-left:20px">
+				<h6 class="h6 small">Search</h6>
+				<input class="form-control" type="search" placeholder="Search"/>
+			</div>
+		</div>
+		<table class="table table-condensed table-responsive" border="1" style="width:600px;padding-left:15px;" align="center">
 			<thead>
-				<tr>
+				<tr class="palette palette-peter-river">
 					<th>Select</th>
 					<th>Mail Code</th>
 					<th>Mail Sub</th>
@@ -48,6 +70,8 @@
 				</td>
 			</tr>
 		</table>
-		<button name="refresh" ng-click="controls.refresh()" value="Refresh">Refresh</button>
+		<button class="btn btn-large btn-primary" name="refresh" ng-click="controls.refresh()" value="Refresh" style="width:100px;">Refresh</button>
+		<button class="btn btn-large btn-primary" name="edit" ng-click="controls.edit()" value="Edit" style="width:100px;">Edit</button>
+		</div>
 	</body>
 </html>

@@ -1,6 +1,6 @@
 {
   "name": "MailKeeper",
-  "main": "/html/index.html",
+  "main": "/html/viewAllMails.html",
   "window": {
     "title": "Mail Keeper",
     "icon": "icon.png",

@@ -8,57 +8,78 @@
 		<script src="js/MailDao.js"></script>
 		<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css"/>
     	<link rel="stylesheet" href="../bower_components/flatui/dist/css/flat-ui.min.css"/>
+		<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
+    	<link rel="stylesheet" href="../bower_components/flatui/dist/css/flat-ui.css"/>
+		<script src="../bower_components/flatui/js/jquery-ui-1.10.3.custom.min.js"></script>
+		<script src="../bower_components/flatui/js/jquery.ui.touch-punch.min.js"></script>
+		<script src="../bower_components/flatui/js/bootstrap-select.js"></script>
+		<script src="../bower_components/flatui/js/bootstrap-switch.js"></script>
+		<script src="../bower_components/flatui/js/flatui-checkbox.js"></script>
+		<script src="../bower_components/flatui/js/flatui-radio.js"></script>
+		<script src="../bower_components/flatui/js/jquery.tagsinput.js"></script>
+		<script src="../bower_components/flatui/js/jquery.placeholder.js"></script>
+		<script src="../bower_components/flatui/js/jquery.stacktable.js"></script>
+		<script src="../bower_components/flatui/js/application.js"></script>			
 		<title>Mail Keeper</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script type="text/javascript">
-			global.$ = $;
-			require('js/global.js');
+			var globalVal = require('./js/global.js');
+			globalVal.global="sachin";
 		</script>
 	</head>
 	<body ng-app="mailApp" ng-controller="addMailDetail" class="form-group">
+		<div class="container">
+			<div class="row" style="float:left;margin-bottom:20px;margin-left:20px">
+				<div class="span3" style="float:left;margin-bottom:20px;margin-left:20px;">  
+					<a href="viewAllMails.html" class="btn btn-large btn-block btn-primary" style="width:80px;">Home</a>
+				</div>
+				<div class="span3" style="float:left;margin-bottom:20px;margin-left:20px;">
+					<a href="index.html" class="btn btn-large btn-block btn-primary" style="width:80px;">Add</a>
+				</div>
+			</div>
+		</div>
 		<div class="form-group" align="center">
-			<div class="form-group" style="width:600px;padding-left:15px;" align="left">
+		<div class="form-group" align="left" style="width:600px;padding-left:15px;">
 			<div class="form-group">
-				<h2 class="h2 large">Add New Mail Details</h2>
+				<h1 class="logo">Add New Mail</h1>
 			</div>
 			<div class="form-group" hidden="true">
 					<input class="form-control" type="text" ng-model="mail.id" hidden="true"/>
 			</div>
-			<div class="form-group">
+			<div class="form-group form-group-lg">
 					<h6 class="h6 small">Mail Code :</h6>
 					<input class="form-control" type="text" ng-model="mail.code"  
 					placeholder="Enter Mail Code"/>
 			</div>
-			<div class="form-group">
+			<div class="form-group form-group-lg">
 					<h6 class="h6 small">Mail Subject :</h6>
 					<input class="form-control" type="text" ng-model="mail.mailSub" 
 					placeholder="Enter Mail Subject"/>
 			</div>
-			<div class="form-group">
+			<div class="form-group form-group-lg">
 				<h6 class="h6 small">Reply Status :</h6>
 				<input class="form-control" type="text" ng-model="mail.replyStatus" 
 				placeholder="Enter Mail Reply Status"/>
 			</div>
-			<div class="form-group">
+			<div class="form-group form-group-lg">
 				<h6 class="h6 small">Remarks :</h6>
 				<textarea class="form-control" ng-model="mail.remarks"  
 				placeholder="Enter Mail Remarks"></textarea>
 			</div>
-			<div class="form-group">
+			<div class="form-group form-group-lg">
 				<h6 class="h6 small">Receive Date :</h6>
 				<input class="form-control" type="date" ng-model="mail.receiveDate" 
 				/>
 			</div>
-			<div class="form-group">
+			<div class="form-group form-group-lg">
 				<h6 class="h6 small">Reply Date :</h6>
-				<input class="form-control" type="date" ng-model="mail.replyDate" />
+				<input class="form-control" type="date" ng-model="mail.replyDate"/>
 			</div>
-			<div class="form-group">
-					<a class="btn btn-primary btn-lg btn-block" ng-click="mail.save()">Save</a>
-					<a class="btn btn-primary btn-lg btn-block" ng-click="mail.clear()">Clear</a>
-					<a class="btn btn-primary btn-lg btn-block" ng-click="mail.viewAllMail()">ViewAll</a>
+			<div class="row demo-row" align="center">
+					<a class="btn btn-large btn-primary" ng-click="mail.save()" style="width:80px;">Save</a>
+					<a class="btn btn-large btn-primary" ng-click="mail.clear()" style="width:80px;">Clear</a>
 			</div>
-			 </div>
 		</div>
-		<button name="sample" value="sample" onclick="open()" align="center">Click</button>
+		</div>
 	</body>
 </html>

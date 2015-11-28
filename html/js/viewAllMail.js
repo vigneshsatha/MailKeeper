@@ -13,10 +13,4 @@ viewAllMailApp.controller('viewAllMailController',function($scope,$location,$win
 	 $timeout(function(){
 		 $scope.apply();
 	 }, 3000);
-	 $scope.init = function(){
-					viewAllMails(function(docs){
-						console.log(docs);
-						$scope.mails = docs;
-					});
-					};
 });
