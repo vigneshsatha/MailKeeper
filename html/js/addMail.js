@@ -24,7 +24,8 @@ mailApp.controller('addMailDetail',function($scope,$location,$window){
 									$scope.mail.replyStatus = "";
 									$scope.mail.replyDate = "";
 									$scope.mail.remarks = "";
-									$scope.$apply();		
+									$scope.$apply();
+									$window.location = "index.html";		
 								});
 							},
 		"clear"			:	function(){
