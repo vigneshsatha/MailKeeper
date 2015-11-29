@@ -4,7 +4,7 @@
 		<script src="../bower_components/angular/angular.min.js"></script>
 		<script src="../bower_components/flatui/dist/js/flat-ui.min.js"></script>
 		<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-		<script src="js/addMail.js"></script>
+		<script src="js/viewOneMail.js"></script>
 		<script src="js/MailDao.js"></script>
 		<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css"/>
     	<link rel="stylesheet" href="../bower_components/flatui/dist/css/flat-ui.min.css"/>
@@ -21,59 +21,42 @@
 		<script src="../bower_components/flatui/js/jquery.stacktable.js"></script>
 		<script src="../bower_components/flatui/js/application.js"></script>			
 		<title>Mail Keeper</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
-	<body ng-app="mailApp" ng-controller="addMailDetail" class="form-group">
-		<div class="container">
-			<div class="row" style="float:left;margin-bottom:20px;margin-left:20px">
-				<div class="span3" style="float:left;margin-bottom:20px;margin-left:20px;">  
-					<a href="viewAllMails.html" class="btn btn-large btn-block btn-primary" style="width:80px;">Home</a>
-				</div>
-				<div class="span3" style="float:left;margin-bottom:20px;margin-left:20px;">
-					<a href="index.html" class="btn btn-large btn-block btn-primary" style="width:80px;">Add</a>
-				</div>
-			</div>
-		</div>
+	<body ng-app="ViewOne" ng-controller="viewOneController" class="form-group">
 		<div class="form-group" align="center">
 		<div class="form-group" align="left" style="width:600px;padding-left:15px;">
 			<div class="form-group">
-				<h1 class="logo">Add New Mail</h1>
-			</div>
-			<div class="form-group" hidden="true">
-					<input class="form-control" type="text" ng-model="mail.id" hidden="true"/>
+				<h1 class="logo">Mail Details</h1>
 			</div>
 			<div class="form-group form-group-lg">
 					<h6 class="h6 small">Mail Code :</h6>
-					<input class="form-control" type="text" ng-model="mail.code"  
-					placeholder="Enter Mail Code"/>
+					<label class="form-control" type="text" ng-model="mail.code" ng-bind="mail.code"
+					placeholder="Enter Mail Code"></label>
 			</div>
 			<div class="form-group form-group-lg">
 					<h6 class="h6 small">Mail Subject :</h6>
-					<input class="form-control" type="text" ng-model="mail.mailSub" 
-					placeholder="Enter Mail Subject"/>
+					<label class="form-control" type="text" ng-model="mail.mailSub" ng-bind="mail.mailSub" 
+					placeholder="Enter Mail Subject"></label>
 			</div>
 			<div class="form-group form-group-lg">
 				<h6 class="h6 small">Reply Status :</h6>
-				<input class="form-control" type="text" ng-model="mail.replyStatus" 
-				placeholder="Enter Mail Reply Status"/>
+				<label class="form-control" type="text" ng-model="mail.replyStatus" ng-bind="mail.replyStatus" 
+				placeholder="Enter Mail Reply Status"></label>
 			</div>
 			<div class="form-group form-group-lg">
 				<h6 class="h6 small">Remarks :</h6>
-				<textarea class="form-control" ng-model="mail.remarks"  
-				placeholder="Enter Mail Remarks"></textarea>
+				<label class="form-control" ng-model="mail.remarks" ng-bind="mail.remarks"
+				placeholder="Enter Mail Remarks"></label>
 			</div>
 			<div class="form-group form-group-lg">
 				<h6 class="h6 small">Receive Date :</h6>
-				<input class="form-control" type="date" ng-model="mail.receiveDate" 
-				/>
+				<label class="form-control" ng-model="mail.receiveDate" ng-bind="mail.receiveDate" 
+				></label>
 			</div>
 			<div class="form-group form-group-lg">
 				<h6 class="h6 small">Reply Date :</h6>
-				<input class="form-control" type="date" ng-model="mail.replyDate"/>
-			</div>
-			<div class="row demo-row" align="center">
-					<a class="btn btn-large btn-primary" ng-click="mail.save()" style="width:80px;">Save</a>
-					<a class="btn btn-large btn-primary" ng-click="mail.clear()" style="width:80px;">Clear</a>
+				<label class="form-control" ng-model="mail.replyDate" ng-bind="mail.replyDate"></label>
 			</div>
 		</div>
 		</div>

@@ -35,15 +35,17 @@
 				<input class="form-control" type="search" placeholder="Search"/>
 			</div>
 		</div>
-		<table class="table table-condensed table-responsive" border="1" style="width:600px;padding-left:15px;" align="center">
+		<table class="table table-condensed table-responsive" border="1" style="width:800px;padding-left:15px;" align="center">
 			<thead>
-				<tr class="palette palette-peter-river">
-					<th>Select</th>
-					<th>Mail Code</th>
-					<th>Mail Sub</th>
-					<th>Received Date</th>
-					<th>Reply Status</th>
-					<th>Remarks</th>
+				<tr class="palette palette-turquoise">
+					<th style="width:80px;text-align:center;">View</th>
+					<th style="width:80px;text-align:center;">Edit</th>
+					<th style="width:80px;text-align:center;">Remove</th>
+					<th style="width:150px;text-align:center;">Mail Code</th>
+					<th style="width:150px;text-align:center;">Mail Sub</th>
+					<th style="width:120px;text-align:center;">Received</th>
+					<th style="width:120px;text-align:center;">Reply Status</th>
+					<th style="width:80px;text-align:center;">Remarks</th>
 				</tr>
 			</thead>
 			<tr ng-repeat="mail in mails">
@@ -51,7 +53,13 @@
 					{{mail._id}}
 				</td>
 				<td align="center">
-					<input type="radio" name="mailSelect"/>	
+					<a href="#"><span class="fui-chat" ng-click="controls.view(mail._id)"></span></a>
+				</td>
+				<td align="center">
+					<a href="#"><span class="fui-new" ng-click="controls.edit(mail._id)"></span></a>
+				</td>
+				<td align="center">
+					<a href="#"><span class="fui-cross"ng-click="controls.remove(mail._id)"></span></a>
 				</td>
 				<td>
 					{{mail.code}}
@@ -60,7 +68,7 @@
 					{{mail.mailSub}}
 				</td>
 				<td>
-					{{mail.receiveDate}}
+					{{mail.receiveDate.getDate()}} - {{mail.receiveDate.getMonth()}} - {{mail.receiveDate.getFullYear()}}
 				</td>
 				<td>
 					{{mail.replyStatus}}
@@ -70,8 +78,7 @@
 				</td>
 			</tr>
 		</table>
-		<button class="btn btn-large btn-primary" name="refresh" ng-click="controls.refresh()" value="Refresh" style="width:100px;">Refresh</button>
-		<button class="btn btn-large btn-primary" name="edit" ng-click="controls.edit()" value="Edit" style="width:100px;">Edit</button>
+		</div>
 		</div>
 	</body>
 </html>
