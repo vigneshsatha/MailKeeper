@@ -10,15 +10,13 @@ mailApp.controller('EditMailDetail',function($scope,$location,$window){
 		"remarks"		:	"",
 		"save"			:	function(){
 								var mailDetail = $scope.mail;
-								console.log(mailDetail.id);
-								console.log(mailDetail.mailSub);
-								console.log(mailDetail.replyDate);
-								console.log(mailDetail.receiveDate);
-								console.log(mailDetail.replyStatus);
-								console.log(mailDetail.remarks);
-								updateMail(mailDetail,function(){
-									alert('Updated successfully');
-									$window.location = "viewAllMails.html";		
+								updateMail(mailDetail,function(err){
+									if(err != null){
+										alert(err);
+									} else{
+										alert('Updated successfully');
+										$window.location = "viewAllMails.html";
+									}		
 								});
 							},
 		"close"			:	function(){

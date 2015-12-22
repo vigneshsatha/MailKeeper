@@ -27,7 +27,7 @@ var removeMail = function(id,callback){
 }
 
 var updateMail = function(mail,callback){
-	db.update({},mail,{},function (err, newDoc) {
-  	callback();
+	db.update({_id:mail._id},mail,{},function (err, newDoc) {
+  	callback(err);
 	});
 };

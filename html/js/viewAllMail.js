@@ -1,8 +1,11 @@
 var viewAllMailApp = angular.module("viewAllMailApp", []);
 viewAllMailApp.controller('viewAllMailController',function($scope,$location,$window,$timeout){
+	$scope.search = {query:''};
 	$scope.mails = [];
 	$scope.controls = {
-		
+		 monthNames : ["JAN", "FEB", "MAR", "APR", "MAY", "JUN",
+  						"JUL", "AUG", "SEP", "OCT", "NOV", "DEC"
+						],
 		"refresh" : function(){
 					viewAllMails(function(docs){
 						console.log(docs);
@@ -21,17 +24,19 @@ viewAllMailApp.controller('viewAllMailController',function($scope,$location,$win
 						$window.location="viewOneMail.html";
 					},
 		"remove"	: function(id){
-						removeMail(id,function(){
-							viewAllMails(function(docs){
-							console.log(docs);
-							$scope.mails = docs;
-							$scope.$apply();
+							if(confirm('Do you wish to remove item?')){
+									removeMail(id,function(){
+									viewAllMails(function(docs){
+									console.log(docs);
+									$scope.mails = docs;
+									$scope.$apply();
+								});
 							});
-						});
-		}
+						}
+					}
 	};
 	 $timeout(function(){
-		 $scope.apply();
+		 $scope.$apply();
 	 }, 3000);
 	 $window.onload = function(){
 		viewAllMails(function(docs){

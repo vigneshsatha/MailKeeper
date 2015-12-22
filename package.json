@@ -4,9 +4,9 @@
   "window": {
     "title": "Mail Keeper",
     "icon": "icon.png",
-    "toolbar": true,
+    "toolbar": false,
     "frame": true,
-    "fullscreen": false
+    "fullscreen": true
   },
   "dependencies": {
     "sqlite3": "3.1.0",
